@@ -8,6 +8,8 @@ export interface SearchMoviesResponse {
 }
 
 export async function fetchMovies(query: string): Promise<Movie[]> {
+  console.log("All env vars:", import.meta.env);
+
   const response = await axios.get<SearchMoviesResponse>(BASE_URL, {
     params: {
       query,
